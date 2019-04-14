@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Recipe Form</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<!--/*@thymesVar id="user" type="com.project.taskmanagement.domain.User"*/-->
+<div class="container-fluid" style="margin-top:50px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" >
+            <div class="panel-group" >
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1>User Information</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4>User Id</h4>
+                            </div>
+                            <div class="col-md-9">
+                                <h4 th:text="${user.id}">1</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4>Name</h4>
+                            </div>
+                            <div class="col-md-9">
+                                <h4 th:text="${user.name}">Palaka</h4>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h4>Role</h4>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 th:text="${user.role}">Manager</h4>
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4>Assigned Tasks</h4>
+                            </div>
+                            <div class="col-md-9">
+                                <ul>
+                                <li th:each="tasks: ${user.tasks}" th:text="${tasks.getTname()}">123</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

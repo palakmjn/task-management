@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Recipe Form</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+    <style>
+        .div1{
+        height: 40px;
+        padding: 5px;
+        border: 1px solid;
+        }
+        #logo{
+        height: 100px;
+        border: 1px solid;
+        padding: 5px
+        }
+    </style>
+</head>
+<body>
+<!--thymesVar id="task" type="com.project.taskmanagement.domain.Task"*/-->
+<div class="container-fluid" style="margin-top:50px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" >
+            <div class="panel-group" >
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1>Task Information</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4>Task Name</h4>
+                            </div>
+                            <div class="col-md-4">
+                                <h4 class="div1" th:text="${task.name}">1</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4>Task Description</h4>
+                            </div>
+                            <div class="col-md-9">
+                                <h4 id="logo" th:text="${task.description}">Palaka</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-md-6">
+                                <h4>Task status</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="div1" th:text="${task.status}">Waiting</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-6">
+                            <h4>Assignee</h4>
+                        </div>
+                            <div class="col-md-6">
+                                <h4 class="div1" th:text="${task.assignee}">Admin</h4>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-md-6">
+                                    <h4>Start date</h4>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="div1" th:text="${task.start_date}">Waiting</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-md-6">
+                                    <h4>End date</h4>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="div1" th:text="${task.end_date}">Admin</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
